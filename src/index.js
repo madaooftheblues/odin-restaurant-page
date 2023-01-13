@@ -1,7 +1,8 @@
 import Background from "./secret_garden_bistro.jpg";
-import header from "./header";
-import home from "./home";
-import menu from "./menu";
+import header from "./modules/header";
+import home from "./modules/home";
+import menu from "./modules/menu";
+import contact from "./modules/contact";
 import "./styles.css";
 
 const content = document.getElementById("content");
@@ -50,6 +51,7 @@ homeTab.addEventListener("click", (e) => {
 
 contactTab.addEventListener("click", (e) => {
   changeTab(e);
+  view.append(contact());
 });
 
 menuTab.addEventListener("click", (e) => {

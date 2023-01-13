@@ -1,6 +1,7 @@
 :root {
   --color: #f3b900;
   --background: rgba(0, 255, 0, 0.1);
+  --green: #228b22;
   --accent: #fffdd0;
 }
 
@@ -8,6 +9,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 #content {
@@ -75,24 +77,47 @@
   transform: scale(1.05);
 }
 
+.header > * {
+  padding: 10px;
+}
+
 .description {
   font-size: 1.2rem;
+  margin: 10px 0;
+  word-spacing: 3px;
+}
+
+.home {
+  color: var(--green);
+  background-color: var(--color);
+  padding: 20px;
+  border: 1px solid var(--green);
 }
 
 .menu {
   color: var(--color);
   height: 80vh;
   overflow: auto;
+  padding-bottom: 60px;
+}
+
+.category {
+  margin-bottom: 40px;
 }
 
 .cat-title {
-  margin: 20px;
+  padding: 5px 0;
+  margin: 0 20px;
+  margin-bottom: 20px;
   background-color: var(--background);
+  border: 1px solid var(--color);
+  font-weight: 900;
 }
 
 .dishes {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 50px;
 }
 
@@ -102,6 +127,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--background);
+  justify-content: center;
+  background-color: var(--color);
+  color: var(--green);
   padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--green);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  cursor: default;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+.recipe {
+  font-size: 1.1rem;
+}
+
+.contact {
+  color: var(--color);
+  background-color: var(--background);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 20px;
+  margin: 10px;
+}
+
+.name,
+.cat-title,
+.contact {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
