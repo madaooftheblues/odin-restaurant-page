@@ -1,8 +1,5 @@
 import Background from "./secret_garden_bistro.jpg";
 import header from "./modules/header";
-import home from "./modules/home";
-import menu from "./modules/menu";
-import contact from "./modules/contact";
 import "./styles.css";
 
 const content = document.getElementById("content");
@@ -44,20 +41,33 @@ function changeTab(e) {
   view.innerText = "";
 }
 
-homeTab.addEventListener("click", (e) => {
-  changeTab(e);
+homeTab.addEventListener("click", (e) =>
+  import("./modules/home").then((module) => {
+    changeTab(e);
+    const home = module.default;
+    view.append(home());
+  })
+);
+
+contactTab.addEventListener("click", (e) =>
+  import("./modules/contact").then((module) => {
+    changeTab(e);
+    const contact = module.default;
+    view.append(contact());
+  })
+);
+
+menuTab.addEventListener("click", (e) =>
+  import("./modules/menu").then((module) => {
+    changeTab(e);
+    const menu = module.default;
+    view.append(menu());
+  })
+);
+
+import("./modules/home").then((module) => {
+  const home = module.default;
   view.append(home());
 });
 
-contactTab.addEventListener("click", (e) => {
-  changeTab(e);
-  view.append(contact());
-});
-
-menuTab.addEventListener("click", (e) => {
-  changeTab(e);
-  view.append(menu());
-});
-
-view.append(home());
 homeTab.classList.add("current");
