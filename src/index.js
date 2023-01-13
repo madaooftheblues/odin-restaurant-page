@@ -1,16 +1,11 @@
 import Background from "./secret_garden_bistro.jpg";
+import header from "./header";
 import home from "./home";
+import menu from "./menu";
 import "./styles.css";
 
 const content = document.getElementById("content");
-const name = document.createElement("h1");
-name.innerText = "The Secret Garden Bistro";
-name.classList.add("name");
-
-const heading = document.createElement("h2");
-heading.innerText =
-  "Discover the Hidden Gem: The Secret Garden Bistro - A Delicious Fusion of Cuisine and Nature";
-heading.classList.add("heading");
+content.append(header());
 
 const navbar = document.createElement("div");
 navbar.classList.add("navbar");
@@ -37,7 +32,7 @@ view.id = "view";
 tabs.append(homeTab, menuTab, contactTab);
 navbar.append(tabs);
 
-content.append(name, heading, navbar, view);
+content.append(navbar, view);
 
 let current = homeTab;
 
@@ -50,7 +45,7 @@ function changeTab(e) {
 
 homeTab.addEventListener("click", (e) => {
   changeTab(e);
-  home(view);
+  view.append(home());
 });
 
 contactTab.addEventListener("click", (e) => {
@@ -59,4 +54,5 @@ contactTab.addEventListener("click", (e) => {
 
 menuTab.addEventListener("click", (e) => {
   changeTab(e);
+  view.append(menu());
 });

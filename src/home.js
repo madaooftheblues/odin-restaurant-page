@@ -1,4 +1,4 @@
-const home = (element) => {
+const home = () => {
   const welcome = document.createElement("h2");
   welcome.innerText = "Welcome to The Secret Garden Bistro";
   welcome.classList.add("welcome");
@@ -11,7 +11,8 @@ const home = (element) => {
   const home = document.createElement("div");
   home.classList.add("home");
   home.append(welcome, description);
-  element.append(home);
+
+  return home;
 };
 
 export default home;

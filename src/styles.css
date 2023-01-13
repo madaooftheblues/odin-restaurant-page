@@ -14,6 +14,27 @@
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
   height: 100vh;
+  overflow: hidden;
+}
+
+/* width of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* background color of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: var(--color);
+}
+
+/* width of the scrollbar */
+::-moz-scrollbar {
+  width: 10px;
+}
+
+/* background color of the scrollbar */
+::-moz-scrollbar-thumb {
+  background-color: var(--background);
 }
 
 .name,
@@ -56,4 +77,31 @@
 
 .description {
   font-size: 1.2rem;
+}
+
+.menu {
+  color: var(--color);
+  height: 80vh;
+  overflow: auto;
+}
+
+.cat-title {
+  margin: 20px;
+  background-color: var(--background);
+}
+
+.dishes {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.card {
+  height: 150px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+  padding: 10px;
 }
