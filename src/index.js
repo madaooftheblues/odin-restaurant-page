@@ -60,3 +60,4 @@ menuTab.addEventListener("click", (e) => {
 });
 
 view.append(home());
+homeTab.classList.add("current");
