@@ -58,3 +58,5 @@ menuTab.addEventListener("click", (e) => {
   changeTab(e);
   view.append(menu());
 });
+
+view.append(home());
