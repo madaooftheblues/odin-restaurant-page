@@ -91,6 +91,7 @@
   color: var(--green);
   background-color: var(--color);
   padding: 20px;
+  padding-bottom: 60px;
   border: 1px solid var(--green);
 }
 
